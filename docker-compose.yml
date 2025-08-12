@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0.15
+    container_name: my-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017" 
+    networks:
+      - backend-net
+    restart: always
+
+  backend:
+    build: ./backend
+    container_name: nest-backend
+    environment:
+      MONGO_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017/${MONGO_DB}?authSource=admin
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    networks:
+      - backend-net
+    restart: always
+
+volumes:
+  mongodb_data:
+
+networks:
+  backend-net:
+    driver: bridge
