@@ -17,4 +17,4 @@ COPY . .
 RUN npm run build
 
 # Chạy app
-CMD ["npm", "run", "start:prod"]
+CMD ["npm", "run", "start:dev"]
