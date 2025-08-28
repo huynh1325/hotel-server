@@ -10,16 +10,22 @@ export class Booking {
   roomId: mongoose.Schema.Types.ObjectId;
 
   @Prop({ required: true })
+  customerName: string;
+
+  @Prop({ required: true })
+  citizenId: string;
+
+  @Prop()
+  citizenImage: string;
+
+  @Prop({ required: true })
   checkInDate: Date;
 
   @Prop({ required: true })
-  checkoutDate: Date;
+  checkOutDate: Date;
 
-  @Prop({ required: true, default: 'reserved' })
-  status: string;
-
-  @Prop({ required: true, default: 'paid' })
-  paymentStatus: string;
+  // @Prop({ required: true, default: 'reserved' })
+  // status: string;
   
   @Prop({ required: true, default: 'banking' })
   paymentMethod: string;
@@ -27,7 +33,7 @@ export class Booking {
   @Prop()
   note: string;
 
-  @Prop({ required: true })
+  @Prop()
   totalPrice: number;
 }
 

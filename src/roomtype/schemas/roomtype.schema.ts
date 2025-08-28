@@ -6,6 +6,9 @@ export type RoomtypeDocument = HydratedDocument<Roomtype>;
 @Schema({ timestamps: true })
 export class Roomtype {
   @Prop({ required: true })
+  name: string;
+
+  @Prop({ required: true })
   price: number;
 }
 

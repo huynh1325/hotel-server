@@ -13,6 +13,11 @@ async function bootstrap() {
     forbidNonWhitelisted: true
   }))
 
+  app.enableCors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+  });
+
   app.setGlobalPrefix('/api/v1', { exclude: ['']})
 
   await app.listen(port ?? 8080);

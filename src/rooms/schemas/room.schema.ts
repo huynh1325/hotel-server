@@ -15,7 +15,7 @@ export class Room {
   @Prop({ required: true, default: 'available' })
   status: string;
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Roomtype.name, required: true })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Roomtype.name})
   roomTypeId: mongoose.Schema.Types.ObjectId
 }
 

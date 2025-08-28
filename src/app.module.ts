@@ -11,6 +11,7 @@ import { RoomtypeModule } from './roomtype/roomtype.module';
 import { MenuModule } from './menu/menu.module';
 import { OrderModule } from './order/order.module';
 import { OrderdetailModule } from './orderdetail/orderdetail.module';
+import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { OrderdetailModule } from './orderdetail/orderdetail.module';
     RoomtypeModule,
     MenuModule,
     OrderModule,
-    OrderdetailModule
+    OrderdetailModule,
+    FileModule
   ],
   controllers: [AppController],
   providers: [AppService],
