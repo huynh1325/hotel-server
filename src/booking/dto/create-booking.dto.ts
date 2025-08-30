@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateBookingDto {
   @IsString()
@@ -12,6 +12,9 @@ export class CreateBookingDto {
   @IsString()
   @IsNotEmpty()
   citizenId: string;
+
+  @IsString()
+  citizenImage: string;
 
   @IsNotEmpty()
   checkInDate: Date;

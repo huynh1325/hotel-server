@@ -14,7 +14,7 @@ export class RoomsService {
   }
 
   findAll() {
-    return `This action returns all rooms`;
+    return this.roomModel.find().populate('roomType').exec();
   }
 
   findOne(id: number) {

@@ -16,7 +16,7 @@ export class Room {
   status: string;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Roomtype.name})
-  roomTypeId: mongoose.Schema.Types.ObjectId
+  roomType: mongoose.Schema.Types.ObjectId
 }
 
 export const RoomSchema = SchemaFactory.createForClass(Room);

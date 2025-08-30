@@ -11,10 +11,11 @@ export class BookingService {
 
   async create(createBookingDto: CreateBookingDto) {
 
-    const { roomId, customerName, citizenId, checkInDate, checkOutDate, paymentMethod } = createBookingDto;
+    const { roomId, customerName, citizenId, citizenImage, checkInDate, checkOutDate, paymentMethod } = createBookingDto;
     const booking = await this.bookingModel.create({
-      roomId, customerName, citizenId, checkInDate, checkOutDate, paymentMethod
+      roomId, customerName, citizenId, citizenImage, checkInDate, checkOutDate, paymentMethod
     })
+    
     return booking;
   }
 
