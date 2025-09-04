@@ -16,9 +16,6 @@ export class Booking {
   citizenId: string;
 
   @Prop({ required: true })
-  citizenImage: string;
-
-  @Prop({ required: true })
   checkInDate: Date;
 
   @Prop({ required: true })

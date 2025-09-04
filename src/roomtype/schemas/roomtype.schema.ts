@@ -8,8 +8,25 @@ export class Roomtype {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true })
-  price: number;
+  @Prop()
+  description: string;
+
+  @Prop({
+    type: [
+      {
+        bookingType: { type: String, enum: ['hourly', 'daily', 'overnight'], required: true },
+        price: { type: Number, required: true },
+      },
+    ],
+    default: [],
+  })
+  basePricing: {
+    bookingType: 'hourly' | 'daily' | 'overnight';
+    price: number;
+  }[];
+
+  @Prop({ type: Number, default: 0 })
+  lateFee: number;
 }
 
 export const RoomtypeSchema = SchemaFactory.createForClass(Roomtype);

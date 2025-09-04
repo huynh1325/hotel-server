@@ -13,9 +13,6 @@ export class CreateBookingDto {
   @IsNotEmpty()
   citizenId: string;
 
-  @IsString()
-  citizenImage: string;
-
   @IsNotEmpty()
   checkInDate: Date;
 

@@ -14,9 +14,9 @@ export class Room {
 
   @Prop({ required: true, default: 'available' })
   status: string;
-
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Roomtype.name})
-  roomType: mongoose.Schema.Types.ObjectId
+  
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: Roomtype.name }] })
+  roomType: mongoose.Schema.Types.ObjectId[];
 }
 
 export const RoomSchema = SchemaFactory.createForClass(Room);
