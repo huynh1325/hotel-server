@@ -21,11 +21,14 @@ export class Booking {
   @Prop({ required: true })
   checkOutDate: Date;
 
-  // @Prop({ required: true, default: 'reserved' })
-  // status: string;
-  
-  @Prop({ required: true, default: 'banking' })
+  @Prop({ required: true })
+  rentalsDays: number;
+
+  @Prop({ required: true })
   paymentMethod: string;
+
+  @Prop({ required: true, enum: ["daily", "overnight", "hourly"] })
+  stayType: string;
   
   @Prop()
   note: string;
