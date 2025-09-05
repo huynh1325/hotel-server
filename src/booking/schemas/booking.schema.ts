@@ -30,6 +30,9 @@ export class Booking {
   @Prop({ required: true, enum: ["daily", "overnight", "hourly"] })
   stayType: string;
   
+  @Prop({ required: true, default: 'pending', enum: ['pending', 'confirmed', 'checkedOut'] })
+  status: string;
+
   @Prop()
   note: string;
 

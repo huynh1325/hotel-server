@@ -1,3 +1,4 @@
+import { Booking } from '@/booking/schemas/booking.schema';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument, Types } from 'mongoose';
 import { Roomtype } from 'src/roomtype/schemas/roomtype.schema';
