@@ -62,6 +62,13 @@ export class BookingService {
     return `This action returns all booking`;
   }
 
+  async getCheckedOutBookings() {
+    return this.bookingModel
+      .find({ status: 'checkedOut' })
+      .sort({ checkOutDate: -1 })
+      .exec();
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} booking`;
   }

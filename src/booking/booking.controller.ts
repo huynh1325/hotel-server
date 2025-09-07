@@ -17,6 +17,11 @@ export class BookingController {
     return this.bookingService.findAll();
   }
 
+  @Get('checkedout')
+  async getCheckedOutBookings() {
+    return this.bookingService.getCheckedOutBookings();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.bookingService.findOne(+id);
