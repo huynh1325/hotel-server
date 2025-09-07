@@ -48,6 +48,8 @@ export class BookingService {
     room.status = 'available';
     booking.status = 'checkedOut';
 
+    booking.checkOutDate = new Date();
+
     await room.save();
     await booking.save();
 
@@ -65,6 +67,7 @@ export class BookingService {
   async getCheckedOutBookings() {
     return this.bookingModel
       .find({ status: 'checkedOut' })
+      .populate("roomId", "roomNumber")
       .sort({ checkOutDate: -1 })
       .exec();
   }
